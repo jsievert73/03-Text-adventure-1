@@ -93,12 +93,17 @@ def Battle(invent,room,current,game):
             playerstrength = 5
     for e in room['exits']:
             if "ATTACK" == e['verb'] and e['target'] != 'NoExit':
+                rewriteroom = e['rewriteroom']
+                rewritedirection = e['rewritedirection']
+                rewrite = e['rewrite']
                 print(e['condition'])
-                print(playerstrength)
                 game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] - (e['strength'])
                 e['health'] = e['health'] - playerstrength
-                if e ['health'] <= 0:
+                if  e['health'] <= 0:
                     print(e['onkill'])
+                    for d in game['rooms'][rewriteroom]['exits']:
+                        if d['verb'] == rewritedirection:
+                            d['target'] = rewrite;
                     return e['target']
                 else:
                     return current

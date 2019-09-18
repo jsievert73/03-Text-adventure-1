@@ -919,7 +919,47 @@
             "strength": 1,
             "health": 4,
             "condition": "You attack the bear, and it responds by clawing at you (-1)",
-            "onkill": "Now that the bear is dead, you could TAKE meat from it."
+            "onkill": "Now that the bear is dead, you could TAKE meat from it.",
+            "rewriteroom": "WILDPATH4",
+            "rewritedirection": "WEST",
+            "rewrite": "DEADBEAR"
+          }
+        ]
+      },
+      "DEADBEAR": {
+        "name": "BEARDEN",
+        "desc": "dead bear test",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WILDPATH4",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the dead bear."
+          },
+          {
+            "verb": "WEST",
+            "target": "DEADBEAR",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the dead bear."
+          },
+          {
+            "verb": "EAST",
+            "target": "WILDPATH4",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DEADBEAR",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the dead bear."
+          },
+          {
+            "verb": "TALK",
+            "target": "DEADBEAR",
+            "condition": "You apologize to the bear for having to kill it."
+          },
+          {
+            "verb": "TAKE",
+            "target": "DEADBEAR",
+            "condition": "You take Meat from the bear.",
+            "item": "Meat"
           }
         ]
       }
