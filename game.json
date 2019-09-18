@@ -279,7 +279,7 @@
             "verb": "TAKE",
             "target": "DININGROOM",
             "item": "Leg of Lamb",
-            "condition": "You take a large LEG OF LAMB that was left over from lunch. (Heals 3 health)"
+            "condition": "You take a large LEG OF LAMB that was left over from lunch. (Heals 3 health when used)"
           }
         ]
       },
@@ -596,6 +596,330 @@
             "target": "ARMORY",
             "item": "Sword",
             "condition": "You take a sword off one of the racks."
+          }
+        ]
+      },
+      "SAGETOWER": {
+        "name": "SAGETOWER",
+        "desc": "The sage's tower is filled with all manner of alchemy equipment, with various magical ingredients scattered about. Viz, the court sage, is busy mixing liquids as one of the tables.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "SAGETOWER",
+            "condition": "This wall has a bookshelf filled with books with strange markings that you don't understand."
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "SAGETOWER",
+            "condition": "Beakers of boiling liquids rest on a table beside this wall."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "SAGETOWER",
+            "condition": "Shelves filled with magical ingredients cover this wall."
+          },
+          {
+            "verb": "TALK",
+            "target": "SAGETOWER",
+            "condition": "VIZ: I assume you're here to ask for my patented health potions. Of course you can take one. Just let me get back to my work."
+          },
+          {
+            "verb": "TAKE",
+            "target": "SAGETOWER",
+            "item": "Potion",
+            "condition": "You take a red potion from one of the tables. (Heals 5 health when used)"
+          }
+        ]
+      },
+      "CASTLEGATE": {
+        "name": "CASTLEGATE",
+        "desc": "A guard stands at the gate, leaning on his pike.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOREST1",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CASTLEGATE",
+            "condition": "A door to the top of the castle wall is embeddded here, but you don't need to go up there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CASTLEGATE",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CASTLEGATE",
+            "condition": "GUARD HAROLD: Good luck on your quest!"
+          }
+        ]
+      },
+      "FOREST1": {
+        "name": "FOREST1",
+        "desc": "You are at the entry to the Forests of Enigvara. Magic or Nature has made it so that very few people will venture into the forest, and fewer still will return.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOREST2",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CASTLEGATE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "FOUNTAIN": {
+        "name": "FOUNTAIN",
+        "desc": "A beautiful fountain is the centerpiece of this courtyard. It depicts the god Omnisci, with water pouring from his hands over the heads of Beridan and Teveya, the first king and queen of Desquere.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOUNTAIN",
+            "condition": "You praise Omnisci for the guidance given to Desquere's rulers."
+          }
+        ]
+      },
+      "FOREST2": {
+        "name": "FOREST2",
+        "desc": "Now being deeper in the forest, the light fades as only a few beams of light make their way through the leaves above. The path turns toward the east.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOREST2",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "WILDPATH1",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST3",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST1",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "WILDPATH1": {
+        "name": "WILDPATH1",
+        "desc": "You're at the start of a trail made by some wild animal. It continues deeper west into the forest.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WILDPATH1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "WILDPATH2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST2",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "WILDPATH1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "WILDPATH2": {
+        "name": "WILDPATH2",
+        "desc": "The vegetation is not well cleared out here, but you're able to see that whatever animal made this path seemed to head north.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WILDPATH3",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "WILDPATH2",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "EAST",
+            "target": "WILDPATH1",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "WILDPATH2",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "WILDPATH3": {
+        "name": "WILDPATH3",
+        "desc": "You see a large footprint in a muddy patch of dirt. You're pretty sure that it's a bear track. It's hard to tell though where it went from here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WILDPATH3",
+            "condition": "You try to squeeze through here, but you can't seem to find anyway to get through the dense underbrush."
+          },
+          {
+            "verb": "WEST",
+            "target": "WILDPATH4",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "WILDPATH3",
+            "condition": "The only way to head east right now would be to climb a tree, and you really don't want to do that in full armor."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "WILDPATH2",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "WILDPATH3",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "WILDPATH4": {
+        "name": "WILDPATH4",
+        "desc": "You stand outside a cave mouth, and hear the faint growls of a bear echoing from inside.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WILDPATH4",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "BEARDEN",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "WILDPATH3",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "WILDPATH4",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "BEARDEN": {
+        "name": "BEARDEN",
+        "desc": "You enter the cave and find a bear growling at you and ready to defend itself.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BEARDEN",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the bear."
+          },
+          {
+            "verb": "WEST",
+            "target": "BEARDEN",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the bear."
+          },
+          {
+            "verb": "EAST",
+            "target": "WILDPATH4",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BEARDEN",
+            "condition": "The cave isn't that big, it really has just enough space for both you and the bear."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You growl at the bear."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "DEADBEAR",
+            "strength": 1,
+            "health": 4,
+            "condition": "You attack the bear, and it responds by clawing at you (-1)",
+            "onkill": "Now that the bear is dead, you could TAKE meat from it."
           }
         ]
       }
