@@ -47,32 +47,26 @@
           {
             "verb": "TALK",
             "target": "THRONEROOM",
-            "condition": "This is what the king says."
-          },
-          {
-            "verb": "TAKE",
-            "target": "THRONEROOM",
-            "condition": "You take the Sword",
-            "item": "Sword"
+            "condition": "KING HAVASQUE: It's good to see you again, but I have dire news. It seems that the ruler of Illerium is preparing an army to attack Desquere. We have reports that he is trying to build an army of dragons, though attempts so far have been unsuccessful. We need you to head north through the Forests of Enigvera, to enter the Caves of Koinonia. From there you can reach Illerium and defeat their ruler. Before you leave, you should visit the armory and the sage tower to get some equipment. They're directly EAST and WEST of the fountain, but you already knew that. Now go forth and be the Champion of Desquere once more!"
           },
           {
             "verb": "ATTACK",
-            "target": "THRONEROOM",
-            "strength": 1,
-            "health": 3,
-            "condition": "You slash at the spectre before you.\nThe spectre's ghostly touch drains your health (-1).",
-            "onkill": "The spectre dissapates before you, banished from this world"
+            "target": "GAMEOVERBAD",
+            "strength": 10,
+            "health": 7,
+            "condition": "You start rushing towards the king to attack him, but the two guards standing at his side strike you down. (-10).",
+            "onkill": "Not killable"
           }
         ],
         "inventory": []
       },
       "GRANDHALLS": {
         "name": "GRANDHALLS",
-        "desc": "You are in the south end of a large Entry hall. Smells from a meal earlier in the day waft out from the nearby dining room.",
+        "desc": "You are in the south end of a large entry hall, just outside the throne room. Smells from a meal earlier in the day waft out from the nearby dining room.",
         "exits": [
           {
             "verb": "NORTH",
-            "target": "GRANDHALLN",
+            "target": "GRANDHALLM",
             "condition": ""
           },
           {
@@ -82,13 +76,489 @@
           },
           {
             "verb": "EAST",
-            "target": "BALLROOM",
+            "target": "BALLROOMS",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "THRONEROOM",
             "condition": ""
           },
           {
             "verb": "TALK",
-            "target": "GRANDHALL1",
+            "target": "GRANDHALLS",
             "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
+      },
+      "GRANDHALLM": {
+        "name": "GRANDHALLM",
+        "desc": "You are in the middle end of a large entry hall, and elegant banners clothe the walls around you, depicting past victories of Desquere.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "GRANDHALLN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "GRANDHALLM",
+            "condition": "You look closer at the banners and see King Havasque himself depicting in this one repelling waves of marauding Wildfolk from the mountains of Revick."
+          },
+          {
+            "verb": "EAST",
+            "target": "BALLROOMN",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GRANDHALLS",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "GRANDHALLM",
+            "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
+      },
+      "GRANDHALLN": {
+        "name": "GRANDHALLN",
+        "desc": "You are in the north end of a large entry hall, steps away from the front door to the keep.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "GRANDHALLN",
+            "condition": "There's a lever here to lock the gate, but that's only for emergencies."
+          },
+          {
+            "verb": "EAST",
+            "target": "GRANDHALLN",
+            "condition": "There's a beautiful pale white stone wall blocking your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GRANDHALLM",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "GRANDHALLN",
+            "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
+      },
+      "BALLROOMS": {
+        "name": "BALLROOMS",
+        "desc": "You are in a large ballroom. Tall elegant windows adorn the walls, bathing the room in light. Chandeliers float above your head that fill the room with light when celebrations go past sunset.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BALLROOMN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "GRANDHALLS",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BALLROOMS",
+            "condition": "Looking out the window, you see the green rolling hills of Desquere, with a few houses scattered across the landscape."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BALLROOMS",
+            "condition": "There's a beautiful pale white stone wall blocking your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "BALLROOMS",
+            "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
+      },
+      "BALLROOMN": {
+        "name": "BALLROOMN",
+        "desc": "You are in a large ballroom, near the musician's stage. A sleek, black piano sits atop the stage, reflecting the sun's rays.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BALLROOMN",
+            "condition": "A curtain of heavy fabric sits on the northern wall to make sure that the musician's sound doesn't bounce back to themselves."
+          },
+          {
+            "verb": "WEST",
+            "target": "GRANDHALLM",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BALLROOMS",
+            "condition": "Looking out the window, you see the green rolling hills of Desquere, with a few houses scattered across the landscape."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BALLROOMS",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "BALLROOMN",
+            "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
+      },
+      "DININGROOM": {
+        "name": "DININGROOM",
+        "desc": "A long oaken table fills the majority of this room. The dishes from the last meal still litter the table.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "KITCHEN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "DININGROOM",
+            "condition": "A banner with the insignia of Desquere, a violet stag on a field of green, fills the wall here."
+          },
+          {
+            "verb": "EAST",
+            "target": "GRANDHALLS",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BALLROOMS",
+            "condition": "There's a beautiful pale white stone wall blocking your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "DININGROOM",
+            "condition": "As you survey the remains of this decadent meal, you give a small prayer of thanks for the bounty that the great god Omnisci has blessed Desquere with."
+          }
+        ]
+      },
+      "KITCHEN": {
+        "name": "KITCHEN",
+        "desc": "A pudgy, but jovial man stands in the middle of the kitchen giving directions to the workers around him.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "KITCHEN",
+            "condition": "Ovens filled with everything from bread to boar cover the wall, filling the room with warmth."
+          },
+          {
+            "verb": "WEST",
+            "target": "KITCHEN",
+            "condition": "Staggering, shifting towers of dishes sit beside wash basins, as dishhands slowly work their way through them."
+          },
+          {
+            "verb": "EAST",
+            "target": "KITCHEN",
+            "condition": "Shelves bending with the weight of spices and herbs from different countries cover this wall."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DININGROOM",
+            "condition": "There's a beautiful pale white stone wall blocking your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "KITCHEN",
+            "condition": "CHEF FARIQ: It's good to see you! Though you could still use with putting a little more meat on your bones. Make sure to take something before you head out on whatever quest the king has for you this time."
+          },
+          {
+            "verb": "TAKE",
+            "target": "DININGROOM",
+            "item": "Leg of Lamb",
+            "condition": "You take a large LEG OF LAMB that was left over from lunch. (Heals 3 health)"
+          }
+        ]
+      },
+      "COURTYARDS": {
+        "name": "COURTYARDS",
+        "desc": "Standing before the entrance to the keep, the bricks of the courtyard beneath your feet you feel at home. The fountain is just north of you.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOUNTAIN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GRANDHALLN",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDS",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDSW": {
+        "name": "COURTYARDSW",
+        "desc": "The bricks of the courtyard are a little worn out here, and could use some repair.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDSW",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDSW",
+            "condition": "A tall tower fills your view, but you've never seen anyone find a way to get up there."
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDSW",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDW": {
+        "name": "COURTYARDW",
+        "desc": "You stand outside the armory, where you've spent thousands of hours training.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDNW",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ARMORY",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOUNTAIN",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDW",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDNW": {
+        "name": "COURTYARDNW",
+        "desc": "Vines wind through the courtyard bricks here, beginning to crawl up the walls.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDW",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDSW",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDSW",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDN": {
+        "name": "COURTYARDN",
+        "desc": "You stand just before the gate to the castle.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CASTLEGATE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDNW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDNE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOUNTAIN",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDSW",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDNE": {
+        "name": "COURTYARDNE",
+        "desc": "The bricks here are smudged with soot from the sage's last experiment that went wrong...",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDNE",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDNE",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDNE",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDE": {
+        "name": "COURTYARDE",
+        "desc": "As you stand in the courtyard outside the sage's tower, plumes of blue smoke puff out it's chimney.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDNE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOUNTAIN",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "SAGETOWER",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDNE",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "COURTYARDSE": {
+        "name": "COURTYARDSE",
+        "desc": "The greenhouse sits just south of this corner of the courtyard, growing food, herbs, and magical ingredients for the castle.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "COURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDSE",
+            "condition": "The tall red stone walls defending the castle are a constant reminder of the alliance Desquere has with the Wesseryians, rulers of the Red Hills."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GREENHOUSE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "COURTYARDNE",
+            "condition": "You give a cheery hello to some of the guards patrolling the courtyard."
+          }
+        ]
+      },
+      "GREENHOUSE": {
+        "name": "GREENHOUSE",
+        "desc": "Vines, flowers, bushes, and trees fill this room with life. A smiling woman is walking between the plants, watering some and whispering to others.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "GREENHOUSE",
+            "condition": "Rows of flowers in hues of pinks and blues fill this wall of the greenhouse."
+          },
+          {
+            "verb": "EAST",
+            "target": "GREENHOUSE",
+            "condition": "Winding trees are interwoven on this wall, making a tapestry of life."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GREENHOUSE",
+            "condition": "A smattering of vegetables are planted along this wall, with everything from potatoes and rutabagas to arugala and basil."
+          },
+          {
+            "verb": "TALK",
+            "target": "GREENHOUSE",
+            "condition": "LILIA: Why if it isn't the champion of Desquere himself. I heard that you're going to be traveling through the Forests of Enigvera. I have some advice for you. There are loads of flora in that forest. Remember that the purple berries are safe to eat, even claimed to have healing properties by some."
           }
         ]
       }
