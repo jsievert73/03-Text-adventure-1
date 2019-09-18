@@ -10,16 +10,13 @@ logger = logging.getLogger(__name__)
 
 
 # Game loop functions
-def render(room,moves,points):
+def render(room,maxHealth,Health):
     ''' Displays the current room, moves, and points '''
 
-    print('\n\nMoves: {moves}, Points: {points}'.format(moves=moves, points=points))
+    print('\n\nMax Health: {mH}, CurrentHealth: {cH}'.format(mH=maxHealth, cH=Health))
     print('\n\nYou are in the {name}'.format(name=room['name']))
     print(room['desc'])
-    if len(room['inventory']):
-        print('You see the following items:')
-        for i in room['inventory']:
-            print('\t{i}'.format(i=i))
+
 
 def getInput(verbs):
     ''' Asks the user for input and normalizes the inputted value. Returns a list of commands '''
@@ -31,18 +28,36 @@ def getInput(verbs):
     return response
 
 
-def update(response,room,current,inventory):
+def update(response,room,current,inventory,game):
     ''' Process the input and update the state of the world '''
     s = list(response)[0]  #We assume the verb is the first thing typed
     if s == "":
         print("\nSorry, I don't understand.")
         return current
-    elif s == 'EXITS':
-        printExits(room)
+    elif s == 'HELP':
+        printVerbs(room)
         return current
+    elif s == 'INVENT':
+        printInvent(inventory)
+        return current
+    elif s == 'TAKE' :
+        noitem = True
+        for e in room['exits']:
+            if s == e['verb']:
+                InventFill(inventory,room)
+                noitem = False
+                return current
+        if noitem:
+            print('There is nothing to take.')
+            return current
+    elif s == 'ATTACK' :
+        for e in room['exits']:
+            if s == e['verb']:
+                return Battle(inventory,room,current,game)
     else:
         for e in room['exits']:
             if s == e['verb'] and e['target'] != 'NoExit':
+                print(e['condition'])
                 return e['target']
     print("\nYou can't go that way!")
     return current
@@ -50,9 +65,50 @@ def update(response,room,current,inventory):
 
 # Helper functions
 
-def printExits(room):
+def printVerbs(room):
     e = ", ".join(str(x['verb']) for x in room['exits'])
-    print('\nYou can go the following directions: {directions}'.format(directions = e))
+    print('\nYou can take the following actions: {directions}'.format(directions = e))
+    print('INVENT')
+
+def printInvent(invent):
+    for e in invent:
+        print(e)
+
+def Battle(invent,room,current,game):
+    playerstrength = 0
+    for e in invent:
+        if e == "Sword":
+            if playerstrength < 1:
+                playerstrength =1
+        if e == "Sharpened Sword":
+            if playerstrength < 2:
+                playerstrength =2
+        if e == "Dwarven Axe":
+            if playerstrength < 3:
+                playerstrength =3
+        if e == "Sharpened Dwarven Axe":
+            if playerstrength < 4:
+                playerstrength = 4
+        if e == "Dragon's Flame":
+            playerstrength = 5
+    for e in room['exits']:
+            if "ATTACK" == e['verb'] and e['target'] != 'NoExit':
+                print(e['condition'])
+                print(playerstrength)
+                game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] - (e['strength'])
+                e['health'] = e['health'] - playerstrength
+                if e ['health'] <= 0:
+                    print(e['onkill'])
+                    return e['target']
+                else:
+                    return current
+
+def InventFill(invent,room):
+    for e in room['exits']:
+            if "TAKE" == e['verb'] and e['target'] != 'NoExit':
+                print(e['condition'])
+                invent.append(e['item'])
+                e['verb'] = "TAKEN"
 
 def normalizeVerb(selection,verbs):
     for v in verbs:
@@ -76,10 +132,12 @@ def main():
 
     # Game name, game file, starting location, winning location(s), losing location(s)
     games = [
-        (   'My Game',          'game.json',    'START',    ['END'],    [])
+        (   'My Game',          'game.json',    'THRONEROOM',    ['END'],    [])
         ,(  'Zork I',           'zork.json',    'WHOUS',    ['NIRVA'],  [])
         ,(  'A Nightmare',      'dream.json',    'START',   ['AWAKE'],  ['END'])
     ]
+
+    inventory = []
 
     # Ask the player to choose a game
     game = {}
@@ -104,12 +162,16 @@ def main():
 
     moves = 0
     points = 0
+    health = 10
+    maxHealth = 10
     inventory = []
 
     print("\n\n\n\nWelcome to {name}!\n\n".format(name=name))
     while True:
-
-        render(game['rooms'][current],moves,points)
+        if choice == 1:
+            render(game['rooms'][current],game['rooms']['CHARACTER']['maxhealth'],game['rooms']['CHARACTER']['health'])
+        else:
+            render(game['rooms'][current],health,maxHealth)
 
         response = getInput(game['verbs'])
 
@@ -117,9 +179,9 @@ def main():
             end_game(False,points,moves)
             break
 
-        current = update(response,game['rooms'][current],current,inventory)
+        current = update(response,game['rooms'][current],current,inventory,game)
 
-        moves += 1
+        moves = moves + 1
 
         if current in win:
             end_game(True,points,moves)

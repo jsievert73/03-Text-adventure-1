@@ -9,43 +9,88 @@
       { "v": "EAST",    "map": "EAST"  },
       { "v": "E",       "map": "EAST"  },
       { "v": "WEST",    "map": "WEST"  },
-      { "v": "W",       "map": "WEST"  }
+      { "v": "W",       "map": "WEST"  },
+      { "v": "TALK",    "map": "TALK"  },
+      { "v": "SPEAK",   "map": "TALK"  },
+      { "v": "ATTACK",  "map": "ATTACK"},
+      { "v": "FIGHT",   "map": "ATTACK"},
+      { "v": "INVENT",  "map": "INVENT"},
+      { "v": "INVENTORY","map": "INVENT"},
+      { "v": "TAKE",    "map":   "TAKE"}
     ],
 
     "rooms": {
-      "START": {
-        "name": "Starting place",
-        "desc": "This is the place to start!",
+      "CHARACTER": {
+        "name": "CHARACTER",
+        "health": 10,
+        "maxhealth": 10
+      },
+      "THRONEROOM": {
+        "name": "THRONEROOM",
+        "desc": "The King of Desquere sits on the throne before you, with two guards standing at his side. You should see what he wants to TALK to you about.",
         "exits": [
           {
             "verb": "NORTH",
-            "target": "LOC2",
-            "condition": ""
-          },
-          {
-            "verb": "SOUTH",
-            "target": "LOC2",
+            "target": "GRANDHALLS",
             "condition": ""
           },
           {
             "verb": "WEST",
-            "target": "LOC2",
-            "condition": ""
+            "target": "THRONEROOM",
+            "condition": "That's the king's private room, you shouldn't go in there."
           },
           {
             "verb": "EAST",
-            "target": "LOC2",
-            "condition": ""
+            "target": "THRONEROOM",
+            "condition": "That's the servants room, you have no need to go in there."
+          },
+          {
+            "verb": "TALK",
+            "target": "THRONEROOM",
+            "condition": "This is what the king says."
+          },
+          {
+            "verb": "TAKE",
+            "target": "THRONEROOM",
+            "condition": "You take the Sword",
+            "item": "Sword"
+          },
+          {
+            "verb": "ATTACK",
+            "target": "THRONEROOM",
+            "strength": 1,
+            "health": 3,
+            "condition": "You slash at the spectre before you.\nThe spectre's ghostly touch drains your health (-1).",
+            "onkill": "The spectre dissapates before you, banished from this world"
           }
         ],
         "inventory": []
       },
-      "LOC2": {
-        "name": "Location 2",
-        "desc": "Here is the second location.",
+      "GRANDHALLS": {
+        "name": "GRANDHALLS",
+        "desc": "You are in the south end of a large Entry hall. Smells from a meal earlier in the day waft out from the nearby dining room.",
         "exits": [
-        ],
-        "inventory": []
+          {
+            "verb": "NORTH",
+            "target": "GRANDHALLN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "DININGROOM",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BALLROOM",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "GRANDHALL1",
+            "condition": "You yell out and your voice echoes in the large room."
+          }
+        ]
       }
     }
   }
