@@ -561,6 +561,43 @@
             "condition": "LILIA: Why if it isn't the champion of Desquere himself. I heard that you're going to be traveling through the Forests of Enigvera. I have some advice for you. There are loads of flora in that forest. Remember that the purple berries are safe to eat, even claimed to have healing properties by some."
           }
         ]
+      },
+      "ARMORY": {
+        "name": "ARMORY",
+        "desc": "Racks of equipment fill the room. Your old mentor, Perrin, stands near the one of the racks inspecting the swords upon it.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ARMORY",
+            "condition": "Barrels bristling with arrows are lined along this wall."
+          },
+          {
+            "verb": "WEST",
+            "target": "ARMORY",
+            "condition": "Swords of differing lengths and styles fill this wall."
+          },
+          {
+            "verb": "EAST",
+            "target": "COURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ARMORY",
+            "condition": "Shields sit on this wall, but you've always opted against them. A strong offense is the best defense."
+          },
+          {
+            "verb": "TALK",
+            "target": "Armory",
+            "condition": "PERRIN: Another quest from the king? Well then you'll probably need something to defend yourself. I'd suggest you TAKE one of the swords in here with you. You can ATTACK enemies in your way, but don't forget that there might be other ways to get past issues."
+          },
+          {
+            "verb": "TAKE",
+            "target": "ARMORY",
+            "item": "Sword",
+            "condition": "You take a sword off one of the racks."
+          }
+        ]
       }
     }
   }
