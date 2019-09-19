@@ -54,6 +54,14 @@ def update(response,room,current,inventory,game):
         for e in room['exits']:
             if s == e['verb']:
                 return Battle(inventory,room,current,game)
+    elif s == 'TRADE' :
+        for e in room['exits']:
+            if s == e['verb']:
+                return Trade(inventory,room,current,game)
+    elif s == 'PET' :
+        for e in room['exits']:
+            if s == e['verb']:
+                return Pet(inventory,room,current,game)
     else:
         for e in room['exits']:
             if s == e['verb'] and e['target'] != 'NoExit':
@@ -108,21 +116,33 @@ def Battle(invent,room,current,game):
                 else:
                     return current
 
+def Pet(invent,room,current,game):
+    for e in room['exits']:
+            if "PET" == e['verb'] and e['target'] != 'NoExit':
+                rewriteroom = e['rewriteroom']
+                rewritedirection = e['rewritedirection']
+                rewrite = e['rewrite']
+                for d in game['rooms'][rewriteroom]['exits']:
+                        if d['verb'] == rewritedirection:
+                            d['target'] = rewrite;
+                return e['target']
+
 def Trade(invent,room,current,game):
-    playerstrength = 0
     for e in room['exits']:
             if "TRADE" == e['verb'] and e['target'] != 'NoExit':
                 rewriteroom = e['rewriteroom']
                 rewritedirection = e['rewritedirection']
                 rewrite = e['rewrite']
-                print(e['condition'])
                 for d in invent:
                     if d == e['item']:
+                        invent.remove(d)
+                        print(e['condition'])
                         for c in game['rooms'][rewriteroom]['exits']:
                             if c['verb'] == rewritedirection:
-                                c['target'] = rewrite;
-                    return e['target']
+                                c['verb'] = rewrite;
+                                return e['target']
                 else:
+                    print("You have nothing they want.")
                     return current
 
 def InventFill(invent,room):

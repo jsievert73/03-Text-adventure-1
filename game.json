@@ -16,7 +16,9 @@
       { "v": "FIGHT",   "map": "ATTACK"},
       { "v": "INVENT",  "map": "INVENT"},
       { "v": "INVENTORY","map": "INVENT"},
-      { "v": "TAKE",    "map":   "TAKE"}
+      { "v": "TAKE",    "map":   "TAKE"},
+      { "v": "TRADE",   "map":  "TRADE"},
+      { "v": "PET",     "map":    "PET"}
     ],
 
     "rooms": {
@@ -1038,7 +1040,7 @@
       },
       "FOREST4": {
         "name": "FOREST4",
-        "desc": "Now being deeper in the forest, the light fades as only a few beams of light make their way through the leaves above. The path turns toward the east.",
+        "desc": "The wolf lies dead in the middle of the path, but at least you can pass by now.",
         "exits": [
           {
             "verb": "NORTH",
@@ -1279,7 +1281,7 @@
       },
       "HUNTERTENT": {
         "name": "HUNTERTENT",
-        "desc": "Vines overhang into the path, but there's still more than enough space to get through here.",
+        "desc": "You come up to a small tent where an elf sits wrapped in furs. They seem to be a trader of some sort.",
         "exits": [
           {
             "verb": "NORTH",
@@ -1304,24 +1306,24 @@
           {
             "verb": "TALK",
             "target": "FOREST3",
-            "condition": "You tell yourself there is nothing to fear."
+            "condition": "RANGER TRENT: It's not often I see another person in these forests. I have a proposition for you. If you can bring me a wolf pelt, I'll give you a Sharpened Sword for your troubles. If you can bring me Bear Meat, I'll make Bear Stew for both of us."
           },
           {
             "verb": "TRADE",
-            "target": "FOREST4",
+            "target": "HUNTERTENT",
             "item": "Wolf Pelt",
-            "condition": "You give the Hunter the Wolf Pelt.",
+            "condition": "You give the Hunter the Wolf Pelt. He offers a Sharpened Sword for you to TAKE in return.",
             "rewriteroom": "HUNTERTENT",
             "rewritedirection": "WOLFTRADE",
             "rewrite": "TAKE"
           },
           {
             "verb": "TRADE",
-            "target": "FOREST4",
+            "target": "HUNTERTENT",
             "item": "Bear Meat",
-            "condition": "You give the Hunter the Wolf Pelt.",
+            "condition": "You give the Hunter the Bear Meat. He offers Bear Stew for you to TAKE in return.",
             "rewriteroom": "HUNTERTENT",
-            "rewritedirection": "BearTRADE",
+            "rewritedirection": "BEARTRADE",
             "rewrite": "TAKE"
           },
           {
@@ -1335,6 +1337,343 @@
             "target": "HUNTERTENT",
             "item": "Bear Stew",
             "condition": "You take some Bear Stew from the Hunter."
+          }
+        ]
+      },
+      "FOREST6": {
+        "name": "FOREST6",
+        "desc": "The vegetation is getting a little bit shorter here, as the ground slopes up to meet the mountain that houses the caves of Koionia.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOREST6",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVEOPENING",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST6",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "HUNTERTENT",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST6",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "CAVEOPENING": {
+        "name": "CAVEOPENING",
+        "desc": "You stand just outside the Caves of Koinonia, legendary home of the dwarves. Sadly it descended into chaos and bloodshed years ago, and now is mostly habitated by spiders and other nuisances.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVEOPENING",
+            "condition": "Northward is a long and arduous climb over mountains, you'd much rather go through the caves."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE1",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST6",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVEOPENING",
+            "condition": "A large gray and brown speckled boulder blocks the way south."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVEOPENING",
+            "condition": "You give a prayer to Omnisci thanking them for your safe travel through the forest."
+          }
+        ]
+      },
+      "SPIDER1": {
+        "name": "CAVE1",
+        "desc": "You walk into the cave to be meeted with the first of many denizens inside. A large spider blocks your way, mandible clacking at you.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "SPIDER1",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the spider is set on blocking your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "SPIDER1",
+            "condition": "That's the way forward, but you can't get past the spider without killing it, or pacifying it in some way."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVEOPENING",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "SPIDER1",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the spider is set on blocking your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "OLDTREE",
+            "condition": "You yell at the spider hoping to scare it away. It doesn't work."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "CAVE1",
+            "strength": 1,
+            "health": 2,
+            "condition": "You attack the spider, and it bites you. (-1)",
+            "onkill": "The spider drops to the floor, twitching in it's death throes.",
+            "rewriteroom": "CAVEOPENING",
+            "rewritedirection": "WEST",
+            "rewrite": "CAVE1"
+          }
+        ]
+      },
+      "CAVE1": {
+        "name": "CAVE1",
+        "desc": "The curled up body of the giant spider fills most of the hallway here, but you're able to squeez past.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE1",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVEOPENING",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE1",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVEOPENING",
+            "condition": "You curse the spider. Spiders should only be big enough to eat little bugs."
+          }
+        ]
+      },
+      "CAVE2": {
+        "name": "CAVE2",
+        "desc": "The path makes a T here. Tunnels lead away to the north, south, and east.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE3",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE2",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE1",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE4",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE2",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE3": {
+        "name": "CAVE3",
+        "desc": "Collapsed rock fills much of the tunnel here, but you can still sneak by to head north and south.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "SPIDER2",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE3",
+            "condition": "Collapsed rock and slate fills that side of the hallway blocking off any potential tunnels heading that direction."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE3",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE2",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE3",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE4": {
+        "name": "CAVE4",
+        "desc": "This path is sloped heavily, making it hard to keep your footing.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE2",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE4",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE4",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE5",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE4",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE5": {
+        "name": "CAVE5",
+        "desc": "A faint smell of brimstone fills the air here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE4",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "DRAGONANGRY",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE5",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE5",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE5",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "DRAGONANGRY": {
+        "name": "DRAGONDEN",
+        "desc": "A small golden-scaled dragon sits in this room. They're standing on their hind legs trying to look as big as they can. It would probably be difficult to get past it at the moment.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "DRAGONANGRY",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the dragon is set on blocking your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "DRAGONANGRY",
+            "condition": "That's the way forward, but you can't get past the dragon without killing it, or pacifying it in some way."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE5",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DRAGONANGRY",
+            "condition": "That's the way forward, but you can't get past the dragon without killing it, or pacifying it in some way."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVEOPENING",
+            "condition": "YOU: Hey buddy, we can be friends right? Would you like to be PET? I think you'd like that.\nThe dragon looks a little confused."
+          },
+          {
+            "verb": "PET",
+            "target": "DRAGONHAPPY",
+            "condition": "You pet the dragon and it purrs in happiness, relaxing.",
+            "rewriteroom": "CAVE5",
+            "rewritedirection": "WEST",
+            "rewrite": "DRAGONHAPPY"
+          },
+          {
+            "verb": "ATTACK",
+            "target": "GAMEOVERBAD",
+            "strength": 10,
+            "health": 7,
+            "condition": "As you start to strike at the dragon, it opens it's mouth. Moments later, all that remains of you is a pile of ash, and a glowing pool of metal.",
+            "onkill": "Not killable"
+          }
+        ]
+      },
+      "DRAGONHAPPY": {
+        "name": "DRAGONDEN",
+        "desc": "The dragon is now very friendly and rubbing against your leg. You can get past with no issue.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "DRAGONHAPPY",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE7",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE5",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DRAGONHAPPY",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "DRAGONHAPPY",
+            "condition": "YOU: Who's a good boy?"
           }
         ]
       }
