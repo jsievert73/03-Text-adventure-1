@@ -1428,7 +1428,7 @@
           },
           {
             "verb": "TALK",
-            "target": "OLDTREE",
+            "target": "SPIDER1",
             "condition": "You yell at the spider hoping to scare it away. It doesn't work."
           },
           {
@@ -1674,6 +1674,799 @@
             "verb": "TALK",
             "target": "DRAGONHAPPY",
             "condition": "YOU: Who's a good boy?"
+          }
+        ]
+      },
+      "CAVE7": {
+        "name": "CAVE7",
+        "desc": "You see a glint of something metallic to the north. You see the glint of the metallic-scaled dragon to the east. Otherwise this corner is pretty nondescript.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "VAULT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE7",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "DRAGONHAPPY",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE7",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE7",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "VAULT": {
+        "name": "VAULT",
+        "desc": "This room looks like it was an old vault that was emptied out ages ago, but there's still a small amount of gold in here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "VAULT",
+            "condition": "Empty shelves fill this wall."
+          },
+          {
+            "verb": "WEST",
+            "target": "VAULT",
+            "condition": "A shimmering spiderweb spans the doorway in that direction. It's not worth getting caught in it."
+          },
+          {
+            "verb": "EAST",
+            "target": "VAULT",
+            "condition": "There's a statue of an old dwarven royal against this wall that's much too heavy for looters to take."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE7",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "VAULT",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          },
+          {
+            "verb": "TAKE",
+            "target": "VAULT",
+            "item": "Gold",
+            "condition": "You take the Gold that is still left in the room."
+          }
+        ]
+      },
+      "SPIDER2": {
+        "name": "CAVE6",
+        "desc": "A large spider stands blocking your way. It's picked a T in the tunnels so more prey will be passing through the area.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "SPIDER2",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the spider is set on blocking your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "SPIDER2",
+            "condition": "That's a way forward, but you can't get past the spider without killing it, or pacifying it in some way."
+          },
+          {
+            "verb": "EAST",
+            "target": "SPIDER2",
+            "condition": "That's a way forward, but you can't get past the spider without killing it, or pacifying it in some way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE3",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "SPIDER2",
+            "condition": "You yell at the spider hoping to scare it away. It doesn't work."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "CAVE7",
+            "strength": 1,
+            "health": 2,
+            "condition": "You attack the spider, and it bites you. (-1)",
+            "onkill": "The spider drops to the floor, twitching in it's death throes.",
+            "rewriteroom": "CAVE3",
+            "rewritedirection": "NORTH",
+            "rewrite": "CAVE6"
+          }
+        ]
+      },
+      "CAVE6": {
+        "name": "CAVE6",
+        "desc": "A T with paths leading south, west, and east meets here. The spider you killed also lies in the center curled up in a ball.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE6",
+            "condition": "There's a rough-hewn wall there"
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE9",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE8",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE3",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE6",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE8": {
+        "name": "CAVE8",
+        "desc": "The smell of rotting flesh and sweat wafts down this tunnel from the east.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE8",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE6",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "GOBLINDEN",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE8",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE7",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "GOBLINFIGHT": {
+        "name": "GOBLINDEN",
+        "desc": "As you enter this room, a goblin jumps up, dagger in hand to defend itself.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "GOBLINFIGHT",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the goblin is set on blocking your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE8",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "GOBLINFIGHT",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the goblin is set on blocking your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GOBLINFIGHT",
+            "condition": "There's a rough-hewn wall there, as well as the fact that the goblin is set on blocking your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE7",
+            "condition": "you shout a battle cry at the goblin, and it snarls back at you."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "GOBLINDEN",
+            "strength": 2,
+            "health": 3,
+            "condition": "You attack the goblin, and it stabs you. (-2)",
+            "onkill": "The goblin cries out in pain, as you skewer it on your sword.",
+            "rewriteroom": "CAVE8",
+            "rewritedirection": "EAST",
+            "rewrite": "GOBLINDEN"
+          }
+        ]
+      },
+      "GOBLINDEN": {
+        "name": "GOBLINDEN",
+        "desc": "This room is filled with rags and all sorts of strange items. There might be something worthwhile to TAKE if you can find it.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "GOBLINDEN",
+            "condition": "A few carcasses are pushed against this wall. The smell is extremely nauseating."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE8",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "GOBLINDEN",
+            "condition": "A bed of sorts is made out of rags and straw resting against this wall."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GOBLINDEN",
+            "condition": "The goblin took care of his business by that wall. You have no interest going any closer to that than you absolutely have to."
+          },
+          {
+            "verb": "TALK",
+            "target": "GOBLINDEN",
+            "condition": "You wonder aloud how the goblin was able to stand the stench of this room."
+          },
+          {
+            "verb": "TAKE",
+            "target": "GOBLINDEN",
+            "item": "Key",
+            "condition": "Rummaging around the room, you eventually find a small silver key. You take it with you."
+          }
+        ]
+      },
+      "CAVE9": {
+        "name": "CAVE9",
+        "desc": "Dwarven carvings are still visible at this point in the tunnels, but you never learned their language.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE10",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE9",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE6",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE9",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE9",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE10": {
+        "name": "CAVE10",
+        "desc": "While the tunnel mainly heads north to south here, the trail winds back and forth. This was done as a way to stop dragons from being able to quickly traverse the tunnels.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE11",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE10",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE10",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE9",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE10",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE11": {
+        "name": "CAVE11",
+        "desc": "A set of stairs heading west here signal the fact that you're getting close to the exits from the caves and nearing Illerium.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE11",
+            "condition": "There's a rough-hewn wall here."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE12",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE11",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE10",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE11",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "CAVE12": {
+        "name": "CAVE12",
+        "desc": "Collapsed pillars block the paths north and south as you find yourself in the middle of what used to be the grand hall of the dwarves.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE12",
+            "condition": "Collapsed pillars block your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "SPIDER3",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE11",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE12",
+            "condition": "Collapsed pillars block your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE12",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "SPIDER3": {
+        "name": "CAVE13",
+        "desc": "A large spider sits in a spiderweb blocking the way south.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "SPIDER3",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "SPIDER3",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE12",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "SPIDER3",
+            "condition": "You'll need to defeat the spider to continue forward."
+          },
+          {
+            "verb": "TALK",
+            "target": "SPIDER3",
+            "condition": "You yell at the spider hoping to scare it away. It doesn't work."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "CAVE13",
+            "strength": 1,
+            "health": 2,
+            "condition": "You attack the spider, and it bites you. (-1)",
+            "onkill": "The spider drops to the floor, twitching in it's death throes. The spiderweb was also cut down during your fight.",
+            "rewriteroom": "CAVE12",
+            "rewritedirection": "WEST",
+            "rewrite": "CAVE13"
+          }
+        ]
+      },
+      "CAVE13": {
+        "name": "CAVE13",
+        "desc": "The mangled spider corpse lies to the side of the room, and the spiderweb hangs limply along the sides of the tunnel.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE13",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE13",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE12",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE14",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE13",
+            "condition": "You curse the spider. Spiders should only be big enough to eat little bugs."
+          }
+        ]
+      },
+      "CAVE14": {
+        "name": "CAVE14",
+        "desc": "The tunnels meet in a T here, with paths going north, south, and west.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE13",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE15",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE14",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DWARVENFORGE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE14",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "DWARVENFORGE": {
+        "name": "DWARVENFORGE",
+        "desc": "You enter a room with a dwarf standing before an anvil. The clang of his hammer fills the room, and you wonder how you didn't hear it earlier...",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE14",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "DWARVENFORGE",
+            "condition": "Cabinets line these walls, where you assume the dwarf keeps his tools."
+          },
+          {
+            "verb": "EAST",
+            "target": "DWARVENFORGE",
+            "condition": "A large pool of water is embedded in this wall, presumably to cool the metal."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "DWARVENFORGE",
+            "condition": "A forge fills this wall, filling the room with oppressive warmth and orange light."
+          },
+          {
+            "verb": "TALK",
+            "target": "DWARVENFORGE",
+            "condition": "GALTHOR: Well I'll be, an actual human. My name's Galthor. Looking at you, I'd say you know how to handle yourself in a fight. Is there anyway you could help me out? A goblin stole a key of mine that I need. If you can get it for me, I'll TRADE you a Dwarven Axe."
+          },
+          {
+            "verb": "TRADE",
+            "target": "DWARVENFORGE",
+            "item": "Key",
+            "condition": "You give Galthor the Key. He offers a Dwarven Axe for you to TAKE in return.",
+            "rewriteroom": "DWARVENFORGE",
+            "rewritedirection": "KEYTRADE",
+            "rewrite": "TAKE"
+          },
+          {
+            "verb": "KEYTRADE",
+            "target": "DWARVENFORGE",
+            "item": "Dwarven Axe",
+            "condition": "You take the Dwarven Axe from the Hunter."
+          }
+        ]
+      },
+      "CAVE15": {
+        "name": "CAVE15",
+        "desc": "The air is fresher here. You must be close to the exit.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE15",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE16",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE14",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE15",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE15",
+            "condition": "Even though you're speaking at a normal level, your voice echoes in this errie place."
+          }
+        ]
+      },
+      "TOLLWAY": {
+        "name": "CAVE16",
+        "desc": "A dwarf stands in the hallway here blocking your way. He has one hand on his axe, but he doesn't seem to be particularly aggressive. He does have a somewhat crazy look in his eyes though...",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVE16",
+            "condition": "You can see the way out, but the dwarf won't let you pass."
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE16",
+            "condition": "There's a rough-hewn wall there, as well as the dwarf blocking your progress."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE15",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE16",
+            "condition": "There's a rough-hewn wall there, as well as the dwarf blocking your progress."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE14",
+            "condition": "MORDEJ: I am Mordej. I am the last descendant of the dwarves of Koinonia. If you wish to pass through my lands, you must pay a fee. You can TRADE gold for passage, or you can FIGHT me and prove yourself."
+          },
+          {
+            "verb": "TRADE",
+            "target": "CAVE16",
+            "item": "Gold",
+            "condition": "You give Mordej the Gold. He steps out of the way, allowing you to pass.",
+            "rewriteroom": "CAVE15",
+            "rewritedirection": "WEST",
+            "rewrite": "CAVE16"
+          },
+          {
+            "verb": "ATTACK",
+            "target": "CAVE16",
+            "strength": 3,
+            "health": 3,
+            "condition": "You attack the Mordej, and he attacks you. (-3)",
+            "onkill": "Mordej, bleeding from multiple wounds, steps back respecting your power.",
+            "rewriteroom": "CAVE15",
+            "rewritedirection": "WEST",
+            "rewrite": "CAVE16"
+          }
+        ]
+      },
+      "CAVE16": {
+        "name": "CAVE16",
+        "desc": "Mordej stands to the side, appeased by your actions. You can now head north to leave the caves and enter Illerium.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "CAVEEXIT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVE16",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVE15",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE16",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVE16",
+            "condition": "MORDEJ: You are free to come and go as you please. Perhaps one day the dwarves of Koinonia may return."
+          }
+        ]
+      },
+      "CAVEEXIT": {
+        "name": "CAVEEXIT",
+        "desc": "Light streams through the cave exit. As you look out, you see the castle of Illerium directly north of you. Your quest is nearing it's completion.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILGATE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "CAVEEXIT",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "EAST",
+            "target": "CAVEEXIT",
+            "condition": "There's a rough-hewn wall there."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVE16",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "CAVEEXIt",
+            "condition": "You offer a prayer to Omnisci for taking you safely through the Caves of Koinonia."
+          }
+        ]
+      },
+      "ILGATE": {
+        "name": "ILGATE",
+        "desc": "As you enter Castle Illerium, you're surprised the gate is open for you.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILGATE",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILGATE",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CAVEEXIT",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILGATE",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "ILCOURTYARDS": {
+        "name": "ILCOURTYARDS",
+        "desc": "Bricks below your feet are stained with blood. Illerium is infamous for having soldiers gain power by fights to the death.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDS",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILGATE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDS",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "ILCOURTYARDSW": {
+        "name": "ILCOURTYARDSW",
+        "desc": "Many bricks are missing for the courtyard here, either ripped out or just knocked out over time.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "GUARDFIGHT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDSW",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDS",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDSW",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDSW",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "GUARDFIGHT": {
+        "name": "ILCOURTYARDW",
+        "desc": "A group of guards block the way forward",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDS",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILGATE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDS",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
           }
         ]
       }

@@ -36,6 +36,7 @@ def update(response,room,current,inventory,game):
         return current
     elif s == 'HELP':
         printVerbs(room)
+        print("USE")
         return current
     elif s == 'INVENT':
         printInvent(inventory)
