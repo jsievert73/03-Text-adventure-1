@@ -928,7 +928,7 @@
       },
       "DEADBEAR": {
         "name": "BEARDEN",
-        "desc": "dead bear test",
+        "desc": "Now that the bear is dead, this cave is much safer to stay in.",
         "exits": [
           {
             "verb": "NORTH",
@@ -953,13 +953,388 @@
           {
             "verb": "TALK",
             "target": "DEADBEAR",
-            "condition": "You apologize to the bear for having to kill it."
+            "condition": "You apologize to the bear for killing it."
           },
           {
             "verb": "TAKE",
             "target": "DEADBEAR",
             "condition": "You take Meat from the bear.",
             "item": "Meat"
+          }
+        ]
+      },
+      "FOREST3": {
+        "name": "FOREST3",
+        "desc": "Vines overhang into the path, but there's still more than enough space to get through here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WOLFFIGHT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST3",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "WOLFFIGHT": {
+        "name": "FOREST4",
+        "desc": "An injured wolf lies in the middle of the path, blocking your way and snarling at you.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WOLFFIGHT",
+            "condition": "As long as the wolf is still alive you can't really get past it."
+          },
+          {
+            "verb": "WEST",
+            "target": "WOLFFIGHT",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "EAST",
+            "target": "WOLFFIGHT",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST3",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST1",
+            "condition": "You tell the wolf that it has nothing to fear."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "FOREST4",
+            "strength": 1,
+            "health": 1,
+            "condition": "You attack the wolf, and it responds by biting you. (-1)",
+            "onkill": "With the wolf dead, you should be able to pass by without issue",
+            "rewriteroom": "FOREST3",
+            "rewritedirection": "NORTH",
+            "rewrite": "FOREST4"
+          }
+        ]
+      },
+      "FOREST4": {
+        "name": "FOREST4",
+        "desc": "Now being deeper in the forest, the light fades as only a few beams of light make their way through the leaves above. The path turns toward the east.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FOREST5",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST4",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST4",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST3",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST4",
+            "condition": "You offer a prayer up to Stagana, goddess of the wilds."
+          },
+          {
+            "verb": "TAKE",
+            "target": "FOREST4",
+            "condition": "You take the pelt from the wolf.",
+            "item": "Wolf Pelt"
+          }
+        ]
+      },
+      "FOREST5": {
+        "name": "FOREST5",
+        "desc": "You see an open glade north of you.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "GLADE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST5",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "EAST",
+            "target": "BERRY1",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST4",
+            "condition": "T"
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST3",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "BERRY1": {
+        "name": "BERRY1",
+        "desc": "This little path has a few berry bushes along it. The one closest to you has red berries.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BERRY1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST5",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BERRY2",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BERRY1",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "BERRY1",
+            "condition": "Somebody must know if these berries are good..."
+          },
+          {
+            "verb": "TAKE",
+            "target": "BERRY1",
+            "item": "Red Berries",
+            "condition": "You pick a few Red Berries from the bush."
+          }
+        ]
+      },
+      "BERRY2": {
+        "name": "BERRY2",
+        "desc": "This little path has a few berry bushes along it. The one closest to you has purple berries.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BERRY2",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "BERRY1",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BERRY3",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BERRY2",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "BERRY2",
+            "condition": "Somebody must know if these berries are good..."
+          },
+          {
+            "verb": "TAKE",
+            "target": "BERRY2",
+            "item": "Purple Berries",
+            "condition": "You pick a few Purple Berries from the bush."
+          }
+        ]
+      },
+      "BERRY3": {
+        "name": "BERRY3",
+        "desc": "This little path has a few berry bushes along it. The one closest to you has blue berries.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BERRY3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "WEST",
+            "target": "BERRY2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "BERRY3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "BERRY3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST3",
+            "condition": "Somebody must know if these berries are good..."
+          },
+          {
+            "verb": "TAKE",
+            "target": "BERRY3",
+            "item": "Blue Berries",
+            "condition": "You pick a few Blue Berries from the bush."
+          }
+        ]
+      },
+      "GLADE": {
+        "name": "GLADE",
+        "desc": "The forest opens up around you, as you find yourself in a open glade. The sun kisses your skin, as you finally come out from the shadows of the forest. The path continues northward from here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "OLDTREE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "GLADE",
+            "condition": "There really is no way to enter back into the forest in that direction from here."
+          },
+          {
+            "verb": "EAST",
+            "target": "GLADE",
+            "condition": "There really is no way to enter back into the forest in that direction from here."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST5",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "GLADE",
+            "condition": "You let out a loud yawn."
+          }
+        ]
+      },
+      "OLDTREE": {
+        "name": "OLDTREE",
+        "desc": "A withered, dead tree blocks the way northward here, and the path curves to the west.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "OLDTREE",
+            "condition": "You're not able to climb over the tree, and the vegetation around it is just as hard to traverse."
+          },
+          {
+            "verb": "WEST",
+            "target": "HUNTERTENT",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "OLDTREE",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "GLADE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "OLDTREE",
+            "condition": "You tell yourself there is nothing to fear."
+          }
+        ]
+      },
+      "HUNTERTENT": {
+        "name": "HUNTERTENT",
+        "desc": "Vines overhang into the path, but there's still more than enough space to get through here.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WOLFFIGHT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FOREST2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "FOREST3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FOREST3",
+            "condition": "Thick vegetation blocks your way."
+          },
+          {
+            "verb": "TALK",
+            "target": "FOREST3",
+            "condition": "You tell yourself there is nothing to fear."
+          },
+          {
+            "verb": "TRADE",
+            "target": "FOREST4",
+            "item": "Wolf Pelt",
+            "condition": "You give the Hunter the Wolf Pelt.",
+            "rewriteroom": "HUNTERTENT",
+            "rewritedirection": "WOLFTRADE",
+            "rewrite": "TAKE"
+          },
+          {
+            "verb": "TRADE",
+            "target": "FOREST4",
+            "item": "Bear Meat",
+            "condition": "You give the Hunter the Wolf Pelt.",
+            "rewriteroom": "HUNTERTENT",
+            "rewritedirection": "BearTRADE",
+            "rewrite": "TAKE"
+          },
+          {
+            "verb": "WOLFTRADE",
+            "target": "HUNTERTENT",
+            "item": "Sharpened Sword",
+            "condition": "You take the Sharpened Sword from the Hunter."
+          },
+          {
+            "verb": "BEARTRADE",
+            "target": "HUNTERTENT",
+            "item": "Bear Stew",
+            "condition": "You take some Bear Stew from the Hunter."
           }
         ]
       }

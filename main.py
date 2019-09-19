@@ -59,7 +59,7 @@ def update(response,room,current,inventory,game):
             if s == e['verb'] and e['target'] != 'NoExit':
                 print(e['condition'])
                 return e['target']
-    print("\nYou can't go that way!")
+    print("\nYou can't do that here!")
     return current
 
 
@@ -104,6 +104,23 @@ def Battle(invent,room,current,game):
                     for d in game['rooms'][rewriteroom]['exits']:
                         if d['verb'] == rewritedirection:
                             d['target'] = rewrite;
+                    return e['target']
+                else:
+                    return current
+
+def Trade(invent,room,current,game):
+    playerstrength = 0
+    for e in room['exits']:
+            if "TRADE" == e['verb'] and e['target'] != 'NoExit':
+                rewriteroom = e['rewriteroom']
+                rewritedirection = e['rewritedirection']
+                rewrite = e['rewrite']
+                print(e['condition'])
+                for d in invent:
+                    if d == e['item']:
+                        for c in game['rooms'][rewriteroom]['exits']:
+                            if c['verb'] == rewritedirection:
+                                c['target'] = rewrite;
                     return e['target']
                 else:
                     return current
