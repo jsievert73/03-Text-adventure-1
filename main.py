@@ -113,6 +113,13 @@ def Battle(invent,room,current,game):
                     for d in game['rooms'][rewriteroom]['exits']:
                         if d['verb'] == rewritedirection:
                             d['target'] = rewrite;
+                    if room == 'WIZARDFIGHT':
+                        rewriteroom2 = e['rewriteroom2']
+                        rewritedirection2 = e['rewritedirection2']
+                        rewrite2 = e['rewrite2']
+                        for c in game['rooms'][rewriteroom2]['exits']:
+                            if c['verb'] == rewritedirection2:
+                                c['target'] = rewrite2;
                     return e['target']
                 else:
                     return current

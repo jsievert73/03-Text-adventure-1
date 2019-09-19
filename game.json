@@ -2276,7 +2276,7 @@
             "target": "CAVE16",
             "strength": 3,
             "health": 3,
-            "condition": "You attack the Mordej, and he attacks you. (-3)",
+            "condition": "You attack Mordej, and he attacks you. (-3)",
             "onkill": "Mordej, bleeding from multiple wounds, steps back respecting your power.",
             "rewriteroom": "CAVE15",
             "rewritedirection": "WEST",
@@ -2441,32 +2441,218 @@
       },
       "GUARDFIGHT": {
         "name": "ILCOURTYARDW",
-        "desc": "A group of guards block the way forward",
+        "desc": "A group of guards block the way forward.",
         "exits": [
           {
             "verb": "NORTH",
-            "target": "ILCOURTYARDS",
-            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+            "target": "GUARDFIGHT",
+            "condition": "You need to go that way to defeat the ruler of Illerium, but the guards are certainly not going to let you pass while they draw breath."
           },
           {
             "verb": "WEST",
+            "target": "GUARDFIGHT",
+            "condition": "There appears to be an armory in that direction, but the guards are certainly not going to let you pass while they draw breath."
+          },
+          {
+            "verb": "EAST",
+            "target": "GuARDFIGHT",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "SOUTH",
             "target": "ILCOURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "GUARDFIGHT",
+            "condition": "You shout a battle cry to intimidate the guards. They don't even flinch."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "ILCOURTYARDW",
+            "strength": 3,
+            "health": 6,
+            "condition": "You attack the guards, and though you try to parry and defend, an attack slips through.(-3)",
+            "onkill": "The last of the guards falls to the ground, leaving the path open to press on.",
+            "rewriteroom": "ILCOURTYARDSW",
+            "rewritedirection": "NORTH",
+            "rewrite": "ILCOURTYARDW"
+          }
+        ]
+      },
+      "ILCOURTYARDW": {
+        "name": "ILCOURTYARDW",
+        "desc": "Dead guards lay on the bricks, bleeding out onto the already blood-stained stones.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDNW",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILARMORY",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDW",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDSW",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDW",
+            "condition": "You give a prayer of thanks to Omnisci for protecting you through the battle with the guards."
+          }
+        ]
+      },
+      "ILARMORY": {
+        "name": "ILARMORY",
+        "desc": "Most of the weaponry here is useless to you, but there's one weapon engraved with runes that's glowing in the corner.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILARMORY",
+            "condition": "Racks of subpar weaponry cover this wall."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILARMORY",
+            "condition": "Bows are hung from this wall, but you've never cared for ranged weaponry."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILARMORY",
+            "condition": "Stores of rations are piled against this wall."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILARMORY",
+            "condition": "YOU: Maybe if they took better care of their weaponry they wouldn't have died..."
+          },
+          {
+            "verb": "TAKE",
+            "target": "ILARMORY",
+            "item": "Dragon's Flame",
+            "condition": "You pick up the sacred weapon of old. The Dragon's Flame. It flares with energy in your hand, then dies down to low hum of power."
+          }
+        ]
+      },
+      "ILCOURTYARDNW": {
+        "name": "ILCOURTYARDNW",
+        "desc": "Briars snake throgh the bricks of the courtyard here, pushing them up at odd angles.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDNW",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDNW",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDW",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDNW",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "ILCOURTYARDSE": {
+        "name": "ILCOURTYARDSE",
+        "desc": "It looks like they tried to repair part of the courtyard here with some sort of pitch, but it just made a mess of black goo that's barely solid.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WIZARDFIGHT",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDS",
             "condition": ""
           },
           {
             "verb": "EAST",
             "target": "ILCOURTYARDSE",
-            "condition": ""
+            "condition": "Marbled rock walls block your path."
           },
           {
             "verb": "SOUTH",
-            "target": "ILGATE",
+            "target": "ILCOURTYARDSE",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDSE",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "WIZARDFIGHT": {
+        "name": "WIZARDFIGHT",
+        "desc": "A sorceror stands before you, with a ball of energy crackling in his hands.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "WIZARDFIGHT",
+            "condition": "You do need to get north, but the only way you'll pass this wizard is over his dead body."
+          },
+          {
+            "verb": "WEST",
+            "target": "WIZARDFIGHT",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "EAST",
+            "target": "WIZARDFIGHT",
+            "condition": "The wizard has a tower there, but the only way you'll pass him is over his dead body."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDSE",
             "condition": ""
           },
           {
             "verb": "TALK",
-            "target": "ILCOURTYARDS",
-            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+            "target": "ILCOURTYARDSW",
+            "condition": "You yell a batlle cry, and you see the wizard flinch a little."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "ILCOURTYARDW",
+            "strength": 3,
+            "health": 6,
+            "condition": "You attack the guards, and though you try to parry and defend, an attack slips through.(-3)",
+            "onkill": "The last of the guards falls to the ground, leaving the path open to press on.",
+            "rewriteroom": "ILCOURTYARDSE",
+            "rewritedirection": "NORTH",
+            "rewrite": "ILCOURTYARDE",
+            "rewriteroom2": "ILCOURTYARDNE",
+            "rewritedirection2": "SOUTH",
+            "rewrite2": "ILCOURTYARDE"
           }
         ]
       }
