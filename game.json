@@ -2892,7 +2892,7 @@
         ]
       },
       "GAMEOVERGOOD": {
-        "name": "",
+        "name": "EPILOGUE",
         "desc": "With Cynthera defeated, you return to Desquere hailed a hero. You return to the mines and bring the baby golden dragon with you to raise to defend the city. From this you begin a new group called the Dragon Riders that herald in a new era of peace and prosperity for the world.\n\n\nCongratulations! Thanks for Playing!",
         "exits": [
           {

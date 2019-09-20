@@ -68,34 +68,41 @@ def update(response,room,current,inventory,game):
         for e in inventory:
             if e == "Blue Berries":
                 print("You eat the Blue Berries. They're delicious.")
+                inventory.remove("Blue Berries")
                 return current
             if e == "Red Berries":
                 game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] -1
                 print("You eat the Red Berries. You don't feel so well afterward. (-1)")
+                inventory.remove("Red Berries")
                 return current
             if e == "Potion":
                 if missinghealth >= 5:
                     game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +5
                     print("You consume the Potion (+5)")
+                    inventory.remove("Potion")
                     return current
             if e == "Leg of Lamb":
                 if missinghealth >= 3:
                     game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +3
                     print("You consume the Leg of Lamb (+3)")
+                    inventory.remove("Leg of Lamb")
                     return current
             if e == "Purple Berries":
                 if missinghealth >= 1:
                     game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +1
                     print("You consume the Purple Berries (+1)")
+                    inventory.remove("Purple Berries")
                     return current
             if e == "Bear Stew":
                 if missinghealth >= 3:
                     game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +3
                     print("You consume your Bear Stew (+3)")
+                    inventory.remove("Bear Stew")
                     return current
             if e == "Red Potion":
                 game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +5
-                print("You consume the Potion (+5)")
+                print("You consume the Red Potion (+9)")
+                inventory.remove("Red Potion")
                 return current
         print("You have nothing to consume, or it wouldn't heal you for the full value at this point.")
         return current
@@ -264,9 +271,11 @@ def main():
         if response[0] == 'QUIT':
             end_game(False,points,moves)
             break
+        
 
         current = update(response,game['rooms'][current],current,inventory,game)
-
+        if game['rooms']['CHARACTER']['health'] <= 0:
+            current = "GAMEOVERBAD"
         moves = moves + 1
 
         if current in win:
