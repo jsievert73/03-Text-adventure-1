@@ -93,14 +93,14 @@ def update(response,room,current,inventory,game):
                     print("You consume the Purple Berries (+1)")
                     inventory.remove("Purple Berries")
                     return current
-            if e == "Bear Stew":
+            if e == "Meat":
                 if missinghealth >= 3:
                     game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +3
-                    print("You consume your Bear Stew (+3)")
-                    inventory.remove("Bear Stew")
+                    print("You consume your Bear Meat (+3)")
+                    inventory.remove("Meat")
                     return current
             if e == "Red Potion":
-                game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +5
+                game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +9
                 print("You consume the Red Potion (+9)")
                 inventory.remove("Red Potion")
                 return current
@@ -170,6 +170,7 @@ def Battle(invent,room,current,game):
 def Pet(invent,room,current,game):
     for e in room['exits']:
             if "PET" == e['verb'] and e['target'] != 'NoExit':
+                print(e['condition'])
                 rewriteroom = e['rewriteroom']
                 rewritedirection = e['rewritedirection']
                 rewrite = e['rewrite']
@@ -184,10 +185,25 @@ def Trade(invent,room,current,game):
                 rewriteroom = e['rewriteroom']
                 rewritedirection = e['rewritedirection']
                 rewrite = e['rewrite']
+                if room == "HUNTERTENT":
+                    rewriteroom2 = e['rewriteroom2']
+                    rewritedirection2 = e['rewritedirection2']
+                    rewrite2 = e['rewrite2']
                 for d in invent:
                     if d == e['item']:
                         invent.remove(d)
                         print(e['condition'])
+                        if room == "HUNTERTENT":
+                            rewriteroom2 = e['rewriteroom2']
+                            rewritedirection2 = e['rewritedirection2']
+                            rewrite2 = e['rewrite2']
+                            for c in game['rooms'][rewriteroom]['exits']:
+                                if c['verb'] == rewritedirection:
+                                    c['verb'] = rewrite;
+                            for c in game['rooms'][rewriteroom2]['exits']:
+                                if c['verb'] == rewritedirection2:
+                                    c['verb'] = rewrite2;
+                                    return e['target']
                         for c in game['rooms'][rewriteroom]['exits']:
                             if c['verb'] == rewritedirection:
                                 c['verb'] = rewrite;

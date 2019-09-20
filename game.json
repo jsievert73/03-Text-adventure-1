@@ -1307,7 +1307,7 @@
           {
             "verb": "TALK",
             "target": "HUNTERTENT",
-            "condition": "RANGER TRENT: It's not often I see another person in these forests. I have a proposition for you. If you can bring me a wolf pelt, I'll give you a Sharpened Sword for your troubles. If you can bring me Bear Meat, I'll make Bear Stew for both of us."
+            "condition": "RANGER TRENT: It's not often I see another person in these forests. I have a proposition for you. If you can bring me a wolf pelt, I'll give you a Sharpened Sword for your troubles."
           },
           {
             "verb": "TRADE",
@@ -1316,7 +1316,10 @@
             "condition": "You give the Hunter the Wolf Pelt. He offers a Sharpened Sword for you to TAKE in return.",
             "rewriteroom": "HUNTERTENT",
             "rewritedirection": "WOLFTRADE",
-            "rewrite": "TAKE"
+            "rewrite": "TAKE",
+            "rewriteroom2": "HUNTERTENT",
+            "rewritedirection2": "TRADE",
+            "rewrite2": "notrade"
           },
           {
             "verb": "TRADE",
@@ -1325,7 +1328,13 @@
             "condition": "You give the Hunter the Bear Meat. He offers Bear Stew for you to TAKE in return.",
             "rewriteroom": "HUNTERTENT",
             "rewritedirection": "BEARTRADE",
-            "rewrite": "TAKE"
+            "rewrite": "TAKE",
+            "rewriteroom2": "HUNTERTENT",
+            "rewritedirection2": "Tradedump",
+            "rewrite2": "notrade"
+          },
+          {
+            "verb": "Tradedump"
           },
           {
             "verb": "WOLFTRADE",
@@ -1383,7 +1392,7 @@
           },
           {
             "verb": "WEST",
-            "target": "CAVE1",
+            "target": "SPIDER1",
             "condition": ""
           },
           {
@@ -1777,7 +1786,7 @@
           },
           {
             "verb": "ATTACK",
-            "target": "CAVE7",
+            "target": "CAVE6",
             "strength": 1,
             "health": 2,
             "condition": "You attack the spider, and it bites you. (-1)",
@@ -1835,7 +1844,7 @@
           },
           {
             "verb": "EAST",
-            "target": "GOBLINDEN",
+            "target": "GOBLINFIGHT",
             "condition": ""
           },
           {
@@ -2214,7 +2223,7 @@
           },
           {
             "verb": "WEST",
-            "target": "CAVE16",
+            "target": "TOLLWAY",
             "condition": ""
           },
           {
@@ -2643,9 +2652,9 @@
           },
           {
             "verb": "ATTACK",
-            "target": "ILCOURTYARDW",
-            "strength": 3,
-            "health": 6,
+            "target": "ILCOURTYARDE",
+            "strength": 5,
+            "health": 5,
             "condition": "You attack the wizard, and he responds by loosing the energy he has gathered. (-5)",
             "onkill": "The wizard slumps over, unable to handle the grievous wounds you dealt him.",
             "rewriteroom": "ILCOURTYARDSE",
@@ -2746,7 +2755,7 @@
           },
           {
             "verb": "SOUTH",
-            "target": "ILCOURTYARDE",
+            "target": "WIZARDFIGHT",
             "condition": ""
           },
           {
