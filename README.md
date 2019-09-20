@@ -1,15 +1,9 @@
 # 03-Text-adventure
 
-This is my solution to the 03-Text adventure assignment for MSCH-C220. I have included a couple of .json game description files for anyone to play with.
-
-main_simple.py contains the code we worked out in class (or a close approximation to it). It runs the zork.json file, as long as it is in the same directory.
+main_simple.py contains the code we worked out in class (or a close approximation to it). It runs the zork.json file, as long as it is in the same directory. THIS WILL NOT RUN GAME.JSON
 
 main.py is a little more complicated. 
+It is set up to be able to run game.json, while still not breaking when running zork or dream.
+There are lots of edits I would make if I had more time. I would definitely take the USE chunk of update and make it a seperate function.
 
-Features to add at some point
- * Objects in the world
- * inventory management
- * Points (for objects acquired or locations visited)
- * Flags for accomplished events
- * Conditional exits (based on flags)
- * etc.
+While not specified in the game itself game.json's game is titled "Champion of Desquere".
