@@ -63,6 +63,42 @@ def update(response,room,current,inventory,game):
         for e in room['exits']:
             if s == e['verb']:
                 return Pet(inventory,room,current,game)
+    elif s == 'USE' :
+        missinghealth = 10 - game['rooms']['CHARACTER']['health']
+        for e in inventory:
+            if e == "Blue Berries":
+                print("You eat the Blue Berries. They're delicious.")
+                return current
+            if e == "Red Berries":
+                game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] -1
+                print("You eat the Red Berries. You don't feel so well afterward. (-1)")
+                return current
+            if e == "Potion":
+                if missinghealth >= 5:
+                    game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +5
+                    print("You consume the Potion (+5)")
+                    return current
+            if e == "Leg of Lamb":
+                if missinghealth >= 3:
+                    game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +3
+                    print("You consume the Leg of Lamb (+3)")
+                    return current
+            if e == "Purple Berries":
+                if missinghealth >= 1:
+                    game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +1
+                    print("You consume the Purple Berries (+1)")
+                    return current
+            if e == "Bear Stew":
+                if missinghealth >= 3:
+                    game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +3
+                    print("You consume your Bear Stew (+3)")
+                    return current
+            if e == "Red Potion":
+                game['rooms']['CHARACTER']['health'] = game['rooms']['CHARACTER']['health'] +5
+                print("You consume the Potion (+5)")
+                return current
+        print("You have nothing to consume, or it wouldn't heal you for the full value at this point.")
+        return current
     else:
         for e in room['exits']:
             if s == e['verb'] and e['target'] != 'NoExit':

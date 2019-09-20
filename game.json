@@ -18,7 +18,8 @@
       { "v": "INVENTORY","map": "INVENT"},
       { "v": "TAKE",    "map":   "TAKE"},
       { "v": "TRADE",   "map":  "TRADE"},
-      { "v": "PET",     "map":    "PET"}
+      { "v": "PET",     "map":    "PET"},
+      { "v": "USE",     "map":    "USE"}
     ],
 
     "rooms": {
@@ -1336,7 +1337,7 @@
             "verb": "BEARTRADE",
             "target": "HUNTERTENT",
             "item": "Bear Stew",
-            "condition": "You take some Bear Stew from the Hunter."
+            "condition": "You take some Bear Stew (+3 when consumed) from the Hunter."
           }
         ]
       },
