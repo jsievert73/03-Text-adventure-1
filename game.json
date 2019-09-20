@@ -1286,27 +1286,27 @@
         "exits": [
           {
             "verb": "NORTH",
-            "target": "WOLFFIGHT",
+            "target": "FOREST6",
             "condition": ""
           },
           {
             "verb": "WEST",
-            "target": "FOREST2",
-            "condition": ""
-          },
-          {
-            "verb": "EAST",
-            "target": "FOREST3",
+            "target": "HUNTERTENT",
             "condition": "Thick vegetation blocks your way."
           },
           {
+            "verb": "EAST",
+            "target": "OLDTREE",
+            "condition": ""
+          },
+          {
             "verb": "SOUTH",
-            "target": "FOREST3",
+            "target": "HUNTERTENT",
             "condition": "Thick vegetation blocks your way."
           },
           {
             "verb": "TALK",
-            "target": "FOREST3",
+            "target": "HUNTERTENT",
             "condition": "RANGER TRENT: It's not often I see another person in these forests. I have a proposition for you. If you can bring me a wolf pelt, I'll give you a Sharpened Sword for your troubles. If you can bring me Bear Meat, I'll make Bear Stew for both of us."
           },
           {
@@ -1321,7 +1321,7 @@
           {
             "verb": "TRADE",
             "target": "HUNTERTENT",
-            "item": "Bear Meat",
+            "item": "Meat",
             "condition": "You give the Hunter the Bear Meat. He offers Bear Stew for you to TAKE in return.",
             "rewriteroom": "HUNTERTENT",
             "rewritedirection": "BEARTRADE",
