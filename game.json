@@ -2612,7 +2612,7 @@
         ]
       },
       "WIZARDFIGHT": {
-        "name": "WIZARDFIGHT",
+        "name": "ILCOURTYARDE",
         "desc": "A sorceror stands before you, with a ball of energy crackling in his hands.",
         "exits": [
           {
@@ -2645,14 +2645,270 @@
             "target": "ILCOURTYARDW",
             "strength": 3,
             "health": 6,
-            "condition": "You attack the guards, and though you try to parry and defend, an attack slips through.(-3)",
-            "onkill": "The last of the guards falls to the ground, leaving the path open to press on.",
+            "condition": "You attack the wizard, and he responds by loosing the energy he has gathered. (-5)",
+            "onkill": "The wizard slumps over, unable to handle the grievous wounds you dealt him.",
             "rewriteroom": "ILCOURTYARDSE",
             "rewritedirection": "NORTH",
             "rewrite": "ILCOURTYARDE",
             "rewriteroom2": "ILCOURTYARDNE",
             "rewritedirection2": "SOUTH",
             "rewrite2": "ILCOURTYARDE"
+          }
+        ]
+      },
+      "ILCOURTYARDE": {
+        "name": "ILCOURTYARDE",
+        "desc": "The wizard's blood adds to the color already staining the courtyard bricks.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDNE",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDE",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILTOWER",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDSE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDE",
+            "condition": "You offer a prayer to Omnisci in thanks for protecting you in your battle against the wizard."
+          }
+        ]
+      },
+      "ILTOWER": {
+        "name": "ILTOWER",
+        "desc": "A large red potion sits on the table in here, among other vials and equipment.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILTOWER",
+            "condition": "Tables of alchemy equipment line the walls, quiet and unused."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILTOWER",
+            "condition": "Shelves of books in anicent langauges stretch across this wall."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILTOWER",
+            "condition": "This wall has a large drawing of an alchemical circle etched into it."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILTOWER",
+            "condition": "YOU: I hope that potion is helpful, because I'm gonna need something."
+          },
+          {
+            "verb": "TAKE",
+            "target": "ILTOWER",
+            "condition": "You take the Red Potion.",
+            "item": "Red Potion"
+          }
+        ]
+      },
+      "ILCOURTYARDNE": {
+        "name": "ILCOURTYARDNE",
+        "desc": "The bricks here are actually white, unstained by blood. Maybe they replace them recently.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILCOURTYARDNE",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDNE",
+            "condition": "Marbled rock walls block your path."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDE",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDNE",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "ILCOURTYARDN": {
+        "name": "ILCOURTYARDN",
+        "desc": "North of you lies the entrance to the Illerrium Keep.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILHALLS",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILCOURTYARDNW",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "ILCOURTYARDNE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDN",
+            "condition": "A dark spire fills the center of the courtyard, blocking your path."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILCOURTYARDN",
+            "condition": "You take a stabilizing breath, preparing yourself for the battle ahead."
+          }
+        ]
+      },
+      "ILHALLS": {
+        "name": "ILHALLS",
+        "desc": "Tapestries of brutal wars adorn the walls. The hall heads northward, towards the throne room, where you will face the Ruler of Ellirium.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILHALLN",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILHALLS",
+            "condition": "There are doorways you could enter, but your quarry is north."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILHALLS",
+            "condition": "There are doorways you could enter, but your quarry is north."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILCOURTYARDN",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILLHALLS",
+            "condition": "You start a chant to Omnisci as you prepare for you final confrontation."
+          }
+        ]
+      },
+      "ILHALLN": {
+        "name": "ILHALLN",
+        "desc": "A feeling of dread sets into your bones as you stand outside the throne room.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILTHRONEROOM",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "ILHALLN",
+            "condition": "There are doorways you could enter, but your quarry is north."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILHALLN",
+            "condition": "There are doorways you could enter, but your quarry is north."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILHALLS",
+            "condition": ""
+          },
+          {
+            "verb": "TALK",
+            "target": "ILHALLN",
+            "condition": "You offer one last prayer to Omnisci before you enter the throne room."
+          }
+        ]
+      },
+      "ILTHRONEROOM": {
+        "name": "ILTHRONEROOM",
+        "desc": "Before you stands the ruler of Illerium, Queen Cynthera the Powerful. As you walk in, she turns a sly smile towards you and wordlessly draws her sword.",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "ILTHRONEROOM",
+            "condition": "You aren't leaving this room until Queen Cynthera is dead, or you are."
+          },
+          {
+            "verb": "WEST",
+            "target": "ILTHRONEROOM",
+            "condition": "You aren't leaving this room until Queen Cynthera is dead, or you are."
+          },
+          {
+            "verb": "EAST",
+            "target": "ILTHRONEROOM",
+            "condition": "You aren't leaving this room until Queen Cynthera is dead, or you are."
+          },
+          {
+            "verb": "SOUTH",
+            "target": "ILTHRONEROOM",
+            "condition": "You aren't leaving this room until Queen Cynthera is dead, or you are."
+          },
+          {
+            "verb": "TALK",
+            "target": "ILTHRONEROOM",
+            "condition": "CYNTHERA: So Desquere sent their fabled champion to face me? FIGHT me, and we'll see if you truly live up to your fame."
+          },
+          {
+            "verb": "ATTACK",
+            "target": "GAMEOVERGOOD",
+            "strength": 3,
+            "health": 15,
+            "condition": "You dance in battle with Cynthera. You both manage to land blows, and you know it will be a close battle. (-3)",
+            "onkill": "Cynthera's blade clatters to the floor, as you strike one last time with Dragon's Flame. The mighty blade pulses with energy and you see the light flicker and die in Cynthera's eyes.",
+            "rewriteroom": "ILCOURTYARDSE",
+            "rewritedirection": "NORTH",
+            "rewrite": "ILCOURTYARDE"
+          }
+        ]
+      },
+      "GAMEOVERGOOD": {
+        "name": "",
+        "desc": "With Cynthera defeated, you return to Desquere hailed a hero. You return to the mines and bring the baby golden dragon with you to raise to defend the city. From this you begin a new group called the Dragon Riders that herald in a new era of peace and prosperity for the world.\n\n\nCongratulations! Thanks for Playing!",
+        "exits": [
+          {
+            "verb": "anticrashmeasures",
+            "target": "",
+            "condition": ""
+          }
+        ]
+      },
+      "GAMEOVERBAD": {
+        "name": "GAME OVER",
+        "desc": "As you succumb to your wounds, the world around you goes dark. Illerium invades Desquere within the next few months, pillaging the kingdom. As they learn how to tame the dragons, the usher in a new dark age of fear and pain.",
+        "exits": [
+          {
+            "verb": "anticrashmeasures",
+            "target": "",
+            "condition": ""
           }
         ]
       }
