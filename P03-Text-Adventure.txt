@@ -1,0 +1,40 @@
+Name:Jacob Ringer
+Date:9/28/19
+Project: Text_Adventure
+Peer's repository:  https://github.com/jsievert73/03-Text-adventure-1.git
+
+
+
+What is something you learned by reviewing your peer's project?
+I learned a method on how to map a health system in the json files.
+ 
+
+What is something you saw in your peer's project that you would like to apply to your own programming projects?
+How to implement additional actions besides movement; something I struggled with in my project.
+ 
+
+What suggestions would you have for your peer to improve his/her code?
+For actions such as inventory or attack, have a quicker way of giving the command.
+ 
+
+What could have been clearer or better commented?
+There were little to no comments in the main.py. Should have commented each function.
+ 
+
+Was there anything in the code that was confusing to you? If so, what?
+How the "USE" command works. I couldn't figure out if the use command required an additional line for the item,
+automatically searched the inventory, or was simular with movement.
+ 
+
+Does the repository contain an appropriate LICENSE?
+Yes.
+ 
+
+What is something he/she could add to the README.md to make it more descriptive?
+Make it clearer that the game.json is the correct file to run, since there are still the other game
+files in the repo.
+ 
+
+Pay a compliment to your peer based on the quality of his/her code.
+Besides these minor "issues" its fantastic. Pretty much only criticized the code cause I had to,
+otherwise impressive work.
